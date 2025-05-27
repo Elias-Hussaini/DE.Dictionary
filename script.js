@@ -201,3 +201,25 @@ function showRandomWord() {
 
 // رویداد کلیک دکمه
 document.getElementById('random-word-btn').addEventListener('click', showRandomWord);
+let autoReviewInterval = null;
+const reviewInterval = 700; // 0.7 ثانیه
+
+function toggleAutoReview() {
+    const autoReviewBtn = document.getElementById('auto-review-btn');
+    
+    if (autoReviewInterval) {
+        // اگر مرور خودکار فعال است، آن را متوقف کن
+        clearInterval(autoReviewInterval);
+        autoReviewInterval = null;
+        autoReviewBtn.textContent = "▶️ مرور خودکار";
+        autoReviewBtn.classList.remove('active');
+    } else {
+        // اگر غیرفعال است، آن را فعال کن
+        autoReviewInterval = setInterval(showRandomWord, reviewInterval);
+        autoReviewBtn.textContent = "⏹️ توقف";
+        autoReviewBtn.classList.add('active');
+    }
+}
+
+// اضافه کردن رویداد کلیک
+document.getElementById('auto-review-btn').addEventListener('click', toggleAutoReview);

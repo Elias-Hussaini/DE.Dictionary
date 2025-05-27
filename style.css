@@ -208,3 +208,54 @@ textarea {
     border-radius: 5px;
     cursor: pointer;
 }
+/* استایل دکمه‌های مرور */
+.review-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0;
+  }
+  
+  #random-word-btn, 
+  #auto-review-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  #random-word-btn {
+    background-color: #6a4caf;
+    color: white;
+  }
+  
+  #auto-review-btn {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  #auto-review-btn.active {
+    background-color: #f44336;
+  }
+  
+  /* افکت‌های hover */
+  #random-word-btn:hover {
+    background-color: #5e3aa3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  #auto-review-btn:hover {
+    background-color: #3e8e41;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  /* حالت فعال */
+  #auto-review-btn.active:hover {
+    background-color: #d32f2f;
+  }
